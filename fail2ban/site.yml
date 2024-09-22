@@ -1,0 +1,7 @@
+---
+
+- hosts: prod
+  become: true
+  roles:
+    - install_fail2ban
+    - start_fail2ban

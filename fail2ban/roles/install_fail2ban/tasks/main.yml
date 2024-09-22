@@ -1,0 +1,5 @@
+- name: Install Fail2ban
+  package:
+    name: "{{fail2ban_package}}"
+    state: latest
+
