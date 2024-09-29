@@ -22,7 +22,7 @@
 - hosts: prod
   become: true
   roles:
-    - role: install_epel
-    - role: install_fail2ban
-    - role: start_fail2ban
-    - role: configure_fail2ban
+    - install_epel
+    - install_fail2ban
+    - start_fail2ban
+    - configure_fail2ban
