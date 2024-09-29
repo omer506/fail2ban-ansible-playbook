@@ -4,12 +4,6 @@
   debug:
     var: fail2ban_package
 
-- name: Installing epel packages
-  package:
-    name: epel-release
-    state: latest
-    
-
 - name: Installing Fail2ban
   package:
     name: "{{ fail2ban_package }}"
