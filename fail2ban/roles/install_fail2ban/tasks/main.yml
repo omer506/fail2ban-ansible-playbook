@@ -5,12 +5,12 @@
     var: fail2ban_package
 
 - name: Installing epel packages
-  package:
+  dnf:
     name: epel-release
     state: latest
     
 
 - name: Installing Fail2ban
-  package:
+  dnf:
     name: "{{ fail2ban_package }}"
     state: latest
