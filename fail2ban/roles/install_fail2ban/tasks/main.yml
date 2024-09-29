@@ -8,7 +8,6 @@
 - name: Installing Fail2ban
   package:
     name:
-     - epel-release
-     -"{{fail2ban_package}}"
+      - epel-release
+      - "{{ fail2ban_package }}"
     state: latest
-
