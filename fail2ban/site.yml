@@ -20,7 +20,7 @@
 
   - name: Install EPEL Repository
     include_role:
-      name: install_epel
+      name: install-epel
 
 
 - hosts: prod
