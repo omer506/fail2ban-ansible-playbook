@@ -1,5 +1,1 @@
-- name: Install EPEL repository for relevant distributions
-  package:
-    name: epel-release
-    state: present
-  when: ansible_distribution in ["CentOS", "RedHat", "Fedora", "OracleLinux"]
+
