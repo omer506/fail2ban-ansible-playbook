@@ -1,0 +1,38 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: Update package cache on RHEL-based systems
+      dnf:
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: Update package cache on Debian-based systems
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Refresh package cache on SUSE-based systems
+      zypper:
+        update_cache: yes
+      when: ansible_os_family == "Suse"
+
+    - name: Update package cache on Arch-based systems
+      command: pacman -Sy --noconfirm
+      when: ansible_os_family == "Archlinux"
+
+    - name: Update package cache on Alpine-based systems
+      apk:
+        update_cache: yes
+      when: ansible_os_family == "Alpine"
+
+    - name: Install EPEL Repository
+      include_role:
+        name: install_epel
+
+  tags: always
+
+- hosts: prod
+  become: true
+  roles:
+    - fail2ban
